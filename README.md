@@ -5,18 +5,18 @@ My second observation is that the smaller the school size, the higher the grades
 """
 
 
-# Dependencies and Setup
+Dependencies and Setup
 import pandas as pd
 
-# File to Load (Remember to Change These)
+ File to Load (Remember to Change These)
 school_data_to_load = "Resources/schools_complete.csv"
 student_data_to_load = "Resources/students_complete.csv"
 
-# Read School and Student Data File and store into Pandas DataFrames
+ Read School and Student Data File and store into Pandas DataFrames
 school_data = pd.read_csv(school_data_to_load)
 student_data = pd.read_csv(student_data_to_load)
 
-# Combine the data into a single dataset.  
+Combine the data into a single dataset.  
 school_data_complete = pd.merge(student_data, school_data, how="left", on=["school_name", "school_name"])
 
 """
@@ -50,19 +50,19 @@ df.rename(columns={'school_name': 'School', 'type': 'Type'})
 df2.rename(columns={'school_name': 'School', 'type': 'Type'})
 df3.rename(columns={'school_name': 'School', 'type': 'Type'})
 
-#Step1 - Calculate the total number of schools
+###Step1 - Calculate the total number of schools
 totnumsch = len(df)
 totnumsch
 
-#Step2 - Calculate the total number of students
+###Step2 - Calculate the total number of students
 totnumstu = len(df3)
 totnumstu
 
-#Step3 - Calculate the total budget
+###Step3 - Calculate the total budget
 totalbudget = df["budget"].sum()
 totalbudget
 
-#Step4 - Calculate the average math score
+###Step4 - Calculate the average math score
 avg_math = df3["math_score"].mean()
 avg_math
 
